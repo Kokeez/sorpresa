@@ -1,37 +1,37 @@
-body {
-  display: flex;
-  height: 100vh;
-  overflow: hidden;
-  justify-content: center;
-  align-items: center;
-}
-textarea {
-  font-size: 24px;
-  border:10px solid black;
-  padding: 2rem 1rem;
-  min-height: 3em;
-  resize: both;
-  background: #ffd73e33;
-  border-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cstyle%3Epath%7Banimation:stroke 5s infinite linear%3B%7D%40keyframes stroke%7Bto%7Bstroke-dashoffset:776%3B%7D%7D%3C/style%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%232d3561' /%3E%3Cstop offset='25%25' stop-color='%23c05c7e' /%3E%3Cstop offset='50%25' stop-color='%23f3826f' /%3E%3Cstop offset='100%25' stop-color='%23ffb961' /%3E%3C/linearGradient%3E %3Cpath d='M1.5 1.5 l97 0l0 97l-97 0 l0 -97' stroke-linecap='square' stroke='url(%23g)' stroke-width='3' stroke-dasharray='388'/%3E %3C/svg%3E") 1;
-}
-
-body,
-html {
-	margin: 0;
-	height: 100%;
+@use postcss-preset-env {
+	stage: 0;
+  }
+  
+  :root {
+	--color-background: #000119;
+	--stroke-width: calc(1em / 16);
+	--font-size: 30vmin;
+	--font-weight: 700;
+	--letter-spacing: calc(1em / 8);
+  }
+  
+  * {
+	box-sizing: border-box;
+  }
+  
+  body {
+	background-color: var(--color-background);
 	display: grid;
-	background-color: #ffdd40;
-	font-family: "Henny Penny", cursive;
-	color: #274dff;
-}
-
-p {
-	margin: auto;
-	letter-spacing: 0.0015em;
-	font-size: 5em;
-	text-shadow: 0 1px #8da1ff, -1px 0 #c0cbff, -1px 2px #8da1ff, -2px 1px #c0cbff,
-		-2px 3px #8da1ff, -3px 2px #c0cbff, -3px 4px #8da1ff, -4px 3px #c0cbff,
-		-4px 5px #8da1ff, -5px 4px #c0cbff, -5px 6px #8da1ff, -6px 5px #c0cbff,
-		-6px 7px #8da1ff, -7px 6px #c0cbff, -7px 8px #8da1ff, -8px 7px #c0cbff;
-	text-align: center;
-}
+	font-family: Poppins, sans-serif;
+	margin: 0;
+	min-block-size: 100vh;
+	place-items: center;
+	padding: 5vmin;
+  }
+  
+  h1 {
+	background-clip: text;
+	background-image: linear-gradient(to right, #09f1b8, #00a2ff, #ff00d2, #fed90f);
+	color: var(--color-background);
+	font-size: var(--font-size);
+	font-weight: var(--font-weight);
+	letter-spacing: var(--letter-spacing);
+	padding: calc(--stroke-width / 2);
+	-webkit-text-stroke-color: transparent;
+	-webkit-text-stroke-width: var(--stroke-width);
+  }
